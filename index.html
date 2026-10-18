@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>拍错题</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#16181c">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="head"><span>拍错题</span><span id="today">今天已传 0 张</span></div>
+  <button class="shutter" id="shoot">拍 一 张<small>拍完自动上传，接着拍下一张</small></button>
+  <div class="row">
+    <button id="album" class="dark">从相册选</button>
+    <button id="installBtn" class="green" hidden>安装到桌面</button>
+  </div>
+  <a class="lan" id="lanBtn" href="#">同一网络：拍完直接进电脑<small id="lanHint">点它进电脑版的拍照页（同一个 WiFi / 手机热点下才通）</small></a>
+  <div class="stat" id="stat">准备好了</div>
+  <div class="grid" id="grid"></div>
+  <details class="note">
+    <summary>说明</summary>
+    <p id="modeNote">照片先存在这台手机上；点「<b>导出文件</b>」会把它们打成一个文件，<b>存到手机的「下载」文件夹</b>。用微信「文件传输助手」或数据线发到电脑，再在电脑上「收集 → 导入手机备份」即可导入。<b>不会丢</b>。</p>
+    <p>手机在这里只负责「拍」，整理和重做都在电脑上做（老师说的：收集要快，别在做题中途打断自己）。</p>
+    <p class="faint">传输口令：<span id="code"></span></p>
+    <p class="faint">电脑地址变了？在这里改：<input id="lanInput" placeholder="http://192.168.x.x:8347" style="width:auto;display:inline-block;padding:4px 8px;font-size:12px;background:#22252b;color:#ddd;border-color:#3a3f47;border-radius:8px"></p>
+  </details>
+</div>
+<input type="file" id="cam" accept="image/*" capture="environment" hidden>
+<input type="file" id="albumFile" accept="image/*" multiple hidden>
+<div class="toast" id="toast"></div>
+<script src="config.js"></script>
+<script src="app.js"></script>
+<script>
+if ('serviceWorker' in navigator) { window.addEventListener('load', function () { navigator.serviceWorker.register('sw.js').catch(function () {}); }); }
+</script>
+</body>
+</html>

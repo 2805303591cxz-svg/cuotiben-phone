@@ -1,0 +1,30 @@
+:root{--bg:#16181c;--fg:#f2efe8;--dim:#9a938a;--line:#2c3037;--blue:#2f6df0;--green:#2f7a52;--red:#c0392b}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--fg);font:16px/1.6 -apple-system,"PingFang SC","Microsoft YaHei",system-ui,sans-serif;min-height:100vh;-webkit-tap-highlight-color:transparent;-webkit-user-select:none;user-select:none}
+.wrap{padding:14px;max-width:640px;margin:0 auto;display:flex;flex-direction:column;min-height:100vh}
+.head{display:flex;justify-content:space-between;font-size:14px;color:var(--dim)}
+.shutter{margin:12px 0 10px;height:30vh;min-height:150px;border:0;border-radius:18px;background:linear-gradient(160deg,#2f6df0,#1b3fb0);color:#fff;font-size:30px;font-weight:700;letter-spacing:3px;box-shadow:0 10px 30px rgba(40,90,220,.35)}
+.shutter:active{transform:scale(.985)}
+.shutter small{display:block;font-size:13px;font-weight:400;letter-spacing:0;opacity:.85;margin-top:6px}
+.row{display:flex;gap:10px;justify-content:center}
+button{font:inherit;border:1px solid #3a3f47;background:#22252b;color:#ddd;border-radius:12px;padding:10px 16px}
+button.green{background:var(--green);border-color:var(--green);color:#fff}
+button.gray{background:#262a31;border-color:#3a3f47}
+.stat{text-align:center;color:var(--dim);font-size:14px;min-height:22px;margin:10px 0}
+.stat b{color:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px}
+.shot{position:relative;border-radius:8px;overflow:hidden;aspect-ratio:3/4;background:#22252b}
+.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.shot .tag{position:absolute;left:0;top:0;font-size:10px;padding:2px 6px;border-radius:0 0 6px 0;background:rgba(0,0,0,.6);color:#fff}
+.shot.pending .tag{background:rgba(192,57,43,.9)}
+.note{margin-top:14px;color:var(--dim);font-size:13px}
+.note summary{cursor:pointer}
+.note p{margin:8px 0;line-height:1.7}
+.faint{color:#6f6a62;font-size:12px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom));transform:translateX(-50%);background:rgba(20,22,26,.95);color:#fff;padding:10px 16px;border-radius:99px;font-size:14px;opacity:0;transition:.2s;pointer-events:none;z-index:80;max-width:90vw;text-align:center}
+.toast.on{opacity:1}
+
+.lan{display:block;margin:12px 0 4px;padding:14px;border-radius:14px;background:#1f7a4d;color:#fff;text-decoration:none;text-align:center;font-size:17px;font-weight:700}
+.lan small{display:block;font-size:12px;font-weight:400;opacity:.85;margin-top:4px}
+.lan:active{transform:scale(.99)}
